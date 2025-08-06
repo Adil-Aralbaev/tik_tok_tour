@@ -6,9 +6,9 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
-      POSTGRES_DB: tik_tok_tour_db
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: kukushonok
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
       - "5432:5432"
 
@@ -26,9 +26,9 @@ services:
       - redis
       - db
     environment:
-      - POSTGRES_DB=tik_tok_tour_db
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=kukushonok
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - DJANGO_SETTINGS_MODULE=my_project.settings
 
   redis:
@@ -48,9 +48,9 @@ services:
 #    restart: always
 #
 #    environment:
-#      - POSTGRES_DB=tour_db
-#      - POSTGRES_USER=postgres
-#      - POSTGRES_PASSWORD=kukushonok
+#      - POSTGRES_DB=${POSTGRES_DB}
+#      - POSTGRES_USER=${POSTGRES_USER}
+#      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
 #      - DB_HOST=db
 #      - DB_PORT=5432
 #      - DJANGO_SETTINGS_MODULE=tour.settings
