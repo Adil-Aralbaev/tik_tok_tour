@@ -30,6 +30,6 @@ ENV PYTHONUNBUFFERED=1
 EXPOSE 8000
 
 # Команда запуска через gunicorn
-CMD ["gunicorn", "my_project.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn", "my_project.wsgi:application", "--bind", "0.0.0.0:80"]
 
 VOLUME /app/staticfiles

@@ -36,7 +36,7 @@ services:
     container_name: redis_server
     ports:
       - "6379:6379"
-
+#
 #  bot:
 #    build: .
 #    container_name: telegram_bot
@@ -53,7 +53,7 @@ services:
 #      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
 #      - DB_HOST=db
 #      - DB_PORT=5432
-#      - DJANGO_SETTINGS_MODULE=tour.settings
+#      - DJANGO_SETTINGS_MODULE=my_project.settings
   nginx:
     image: nginx:latest
     ports:

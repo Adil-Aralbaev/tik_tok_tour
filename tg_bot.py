@@ -9,7 +9,7 @@ django.setup()
 
 from account.models import User
 from account.services import generate_random_password, generate_otp, store_to_cache
-from .config import BOT
+from config import BOT
 
 bot = telebot.TeleBot(BOT)
 

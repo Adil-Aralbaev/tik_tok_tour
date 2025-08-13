@@ -123,10 +123,12 @@ class RatingView(GenericAPIView):
         rater = request.user
         tour = serializer.validated_data['tour']
         score = serializer.validated_data['score']
+        comment = serializer.validated_data['comment']
 
         rating, created = Rating.objects.update_or_create(
             rater=rater,
             tour=tour,
+            comment=comment,
             defaults={'score': score}
         )
 
